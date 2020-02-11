@@ -27,6 +27,10 @@ export default function Contact() {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
+    console.log(
+      "encode(): ",
+      encode({ "form-name": form.getAttribute("name"), ...state })
+    );
     fetch("/", {
       method: "POST",
       body: encode({
